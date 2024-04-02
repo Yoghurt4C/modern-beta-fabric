@@ -26,17 +26,17 @@ import net.minecraft.util.Util;
 
 @Environment(value=EnvType.CLIENT)
 public class ModernBetaSettingsPresetScreen extends ModernBetaScreen {
-    private static final String TEXT_TITLE = "createWorld.customize.modern_beta.title.preset";
-    private static final String TEXT_PRESET_NAME = "createWorld.customize.modern_beta.preset.name";
-    private static final String TEXT_PRESET_DESC = "createWorld.customize.modern_beta.preset.desc";
-    private static final String TEXT_PRESET_TYPE_DEFAULT = "createWorld.customize.modern_beta.preset.type.default";
-    private static final String TEXT_PRESET_TYPE_CUSTOM = "createWorld.customize.modern_beta.preset.type.custom";
+    public static final String TEXT_TITLE = "createWorld.customize.modern_beta.title.preset";
+    public static final String TEXT_PRESET_NAME = "createWorld.customize.modern_beta.preset.name";
+    public static final String TEXT_PRESET_DESC = "createWorld.customize.modern_beta.preset.desc";
+    public static final String TEXT_PRESET_TYPE_DEFAULT = "createWorld.customize.modern_beta.preset.type.default";
+    public static final String TEXT_PRESET_TYPE_CUSTOM = "createWorld.customize.modern_beta.preset.type.custom";
     
-    //private static final Identifier TEXTURE_PRESET_DEFAULT = createTextureId("default");
-    private static final Identifier TEXTURE_PRESET_CUSTOM = createTextureId("custom");
+    //public static final Identifier TEXTURE_PRESET_DEFAULT = createTextureId("default");
+    public static final Identifier TEXTURE_PRESET_CUSTOM = createTextureId("custom");
     
-    private final List<String> presetsDefault;
-    private final List<String> presetsCustom;
+    public final List<String> presetsDefault;
+    public final List<String> presetsCustom;
 
     private ModernBetaSettingsPreset preset;
     private PresetsListWidget listWidget;
@@ -80,9 +80,8 @@ public class ModernBetaSettingsPresetScreen extends ModernBetaScreen {
     
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.listWidget.render(context, mouseX, mouseY, delta);
-       
         super.render(context, mouseX, mouseY, delta);
+        this.listWidget.render(context, mouseX, mouseY, delta);
     }
     
     @Override
@@ -97,8 +96,8 @@ public class ModernBetaSettingsPresetScreen extends ModernBetaScreen {
     }
 
     private class PresetsListWidget extends AlwaysSelectedEntryListWidget<PresetsListWidget.PresetEntry> {
-        private static final int ITEM_HEIGHT = 60;
-        private static final int ICON_SIZE = 56;
+        public static final int ITEM_HEIGHT = 60;
+        public static final int ICON_SIZE = 56;
         
         public PresetsListWidget(List<String> presetsDefault, List<String> presetsCustom) {
             super(
@@ -145,19 +144,19 @@ public class ModernBetaSettingsPresetScreen extends ModernBetaScreen {
         }
         
         private class PresetEntry extends AlwaysSelectedEntryListWidget.Entry<PresetEntry> {
-            private static final Identifier TEXTURE_WORLD_SELECT = new Identifier("textures/gui/world_selection.png");
-            private static final int TEXTURE_WORLD_SELECT_ATLAS_SIZE = 256;
-            private static final int TEXTURE_WORLD_SELECT_SIZE= 32;
+            public static final Identifier TEXTURE_WORLD_SELECT = new Identifier("textures/gui/world_selection.png");
+            public static final int TEXTURE_WORLD_SELECT_ATLAS_SIZE = 256;
+            public static final int TEXTURE_WORLD_SELECT_SIZE= 32;
             
-            private static final int TEXT_SPACING = 11;
-            private static final int TEXT_LENGTH = 240;
+            public static final int TEXT_SPACING = 11;
+            public static final int TEXT_LENGTH = 240;
             
-            private final Identifier presetTexture;
-            private final MutableText presetType;
-            private final MutableText presetName;
-            private final MutableText presetDesc;
-            private final ModernBetaSettingsPreset preset;
-            private final boolean isCustom;
+            public final Identifier presetTexture;
+            public final MutableText presetType;
+            public final MutableText presetName;
+            public final MutableText presetDesc;
+            public final ModernBetaSettingsPreset preset;
+            public final boolean isCustom;
             
             private long time;
             
